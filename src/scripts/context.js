@@ -1,28 +1,32 @@
 import React from 'react';
 
 
-function ThemedButton(props)
-{
-    return(<div>
-        <button theme = {props.theme}><h1>CONTEXT：{props.theme}</h1></button>
-    </div>);
-}
 
-function Toobar(props)
-{
+const ThemeContext = React.createContext('light');
+function ThemedButton(props) {
     return (<div>
-        <ThemedButton theme = {props.theme}/>
+        <ThemeContext.Consumer>
+            {theme=>{return <button ><h1>CONTEXT：{theme} {props.propTheme}</h1></button>}}
+            
+        </ThemeContext.Consumer>
+
+    </div>);
+}
+
+function Toobar(props) {
+    return (<div>
+        <ThemeContext.Provider value='green'><ThemedButton {...props} /></ThemeContext.Provider>
+        
     </div>);
 }
 
 
-export default class App extends React.Component
-{
-    render()
-    {
+export default class App extends React.Component {
+    render() {
         return (
             <div >
-                <Toobar theme='dark' />
+                <ThemeContext.Provider value='blue'><Toobar propTheme = 'red' /></ThemeContext.Provider>
+
             </div>
         );
     }

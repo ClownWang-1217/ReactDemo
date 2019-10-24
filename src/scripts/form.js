@@ -45,19 +45,21 @@ export default class FormComponent extends React.Component {
             <div>
                 <form onSubmit={this._handleOnSubmit}>
                 <label>
-                    <input type='text' name='name' value={this.state.value} onChange={this._handleOnChange}>
-                    </input>
+                    {/* <input type='text' name='name' value={this.state.value} onChange={this._handleOnChange}>
+                    </input> */}
+                    <input type='text' name = 'aa'></input>
                 </label>
                 <input type="submit" value="Submit" />
-                <input type="radio" name="yes-no" id='yes'/>确定
+                <button type = 'submit'> Submit</button>
+                {/* <input type="radio" name="yes-no" id='yes'/>确定
             
-                    <input type="radio" name="yes-no" id='no' />取消
+                    <input type="radio" name="yes-no" id='no' />取消 */}
             
 
                 </form>
 
-                <label for='yes'>点击这里也可选择 确定 选项 </label>
-                <label for='no'>点击这里也可选择 确定 选项</label>
+                <label htmlFor='yes'>点击这里也可选择 确定 选项 </label>
+                <label htmlFor='no'>点击这里也可选择 确定 选项</label>
             </div>
             
             

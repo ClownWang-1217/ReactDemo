@@ -8,3 +8,6 @@ img{
     width: 500px;height: 500px;
     
 }
+#scroll{
+    z-index: -100;
+}
