@@ -12,7 +12,8 @@ module.exports = {
         jsdemo:'./src/scripts/jsdemo.js',
         jsdemob:'./src/scripts/jsdemob.js',
         jsdemoc:'./src/scripts/jsdemoc.js',
-        nav:'./src/scripts/nav.js'
+        nav:'./src/scripts/nav.js',
+        style:'./src/scripts/redux/src/index.js'
     },
     output:{
         filename:'scripts/[name].js',
@@ -37,6 +38,26 @@ module.exports = {
                     'css-loader'
                 ],
                 
+                exclude: path.resolve(__dirname, 'node_modules'),
+            },
+            {
+                include:path.resolve(__dirname, 'src'),
+                test:/\.scss$/,
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ],
+                exclude: path.resolve(__dirname, 'node_modules'),
+            },
+            {
+                include:path.resolve(__dirname, 'src'),
+                test:/\.less$/,
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ],
                 exclude: path.resolve(__dirname, 'node_modules'),
             },
             {

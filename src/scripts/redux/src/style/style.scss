@@ -1,0 +1,5 @@
+$bntcolor:red;
+$name:test;
+.#{$name}btn{
+    color:$bntcolor
+}

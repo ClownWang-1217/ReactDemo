@@ -27,7 +27,7 @@ export default (state = defaultState,action) =>{
     if(action.type === DEL_LIST)
     {
         let newState = JSON.parse(JSON.stringify(state));
-        newState.list.splice(action.value.key,1);
+        newState.list.splice(action.value,1);
         console.log('newstate'+newState.list);
         return newState;
     }

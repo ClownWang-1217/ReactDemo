@@ -27,6 +27,7 @@ import MyPromise from './promise';
 import RouterComponent from './route';
 
 import Index from './redux/src/index';
+import Diff from './redux/src/diff'
 
 
 // if(0)
@@ -182,8 +183,8 @@ import Index from './redux/src/index';
 //}
 
 
-ReactDOM.render(<Index>
-    
-
-</Index>, document.getElementById('root'));
+ReactDOM.render(<div>
+    <Index/>
+    <Diff />
+</div>, document.getElementById('root'));
 
